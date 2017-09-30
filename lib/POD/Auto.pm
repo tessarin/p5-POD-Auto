@@ -61,8 +61,7 @@ POD::Auto - Automatically launch embed POD
 
 =head1 SYNOPSIS
 
-I<POD::Auto> analyses the program arguments and if a specific flag is
-found, it will launch I<perldoc>. Opening the man page of a program with
+I<POD::Auto> analyses the program arguments and launches I<perldoc> if a specific flag is found. Opening the man page of a program with
 embed POD can thus be made with little effort.
 
     use POD::Auto [flags];
