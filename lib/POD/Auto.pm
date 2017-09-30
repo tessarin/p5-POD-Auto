@@ -7,7 +7,7 @@ use warnings;
 use Carp;
 use Pod::Perldoc;
 
-our $VERSION = '1.0';
+our $VERSION = '1.0.1';
 
 sub import {
     my $arg = $_[1] // 'help';
