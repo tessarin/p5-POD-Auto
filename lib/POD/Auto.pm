@@ -52,3 +52,57 @@ sub show_docs {
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+B<POD::Auto>
+- Automatically launch embed POD according to program arguments.
+
+=head1 SYNOPSIS
+
+I<POD::Auto> analyses the program arguments and if a specific flag is
+found, it will launch I<perldoc>. Opening the man page of a program with
+embed POD can thus be made with little effort.
+
+    use POD::Auto [flags];
+
+=head1 DESCRIPTION
+
+The argument passed at the C<use> statement must be a string containing
+either a long opt, short, or both separated by a C<|> character. The
+module will then search for these flags in C<@ARGV>, call I<perldoc> on
+the program name and exit.
+
+If no argument is passed, the module looks for the C<--help> flag by
+default.
+
+Short flags are searched according to usual argument conventions. If the
+module has to search for the C<h> flag, for example, calling the program
+with C<-vph> does result in a match.
+
+=head1 EXAMPLES
+
+The most basic scenario possible is to just C<use> the module:
+
+    use POD::Auto;
+    # program code and POD
+
+And then, in your shell:
+
+    $ program		# executes program normally
+    $ program --help	# opens documentation,
+			# similar to `perldoc -F $0`
+
+=head2 Custom Flags
+
+The string passed at the C<use> statement determines the search:
+
+    use POD::Auto "h";		# searches for `-h`
+    use POD::Auto "h|version";	# searches for `-h` or `--help`
+
+=head1 AUTHOR
+
+This module was written by Cesar Tessarin on Sep. 2017 as a test Perl
+distribution using L<https://github.com>.
