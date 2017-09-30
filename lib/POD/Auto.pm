@@ -57,8 +57,7 @@ __END__
 
 =head1 NAME
 
-B<POD::Auto>
-- Automatically launch embed POD according to program arguments.
+POD::Auto - Automatically launch embed POD
 
 =head1 SYNOPSIS
 
@@ -106,3 +105,5 @@ The string passed at the C<use> statement determines the search:
 
 This module was written by Cesar Tessarin on Sep. 2017 as a test Perl
 distribution using L<https://github.com>.
+
+=cut
